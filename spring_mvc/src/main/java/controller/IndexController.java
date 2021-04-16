@@ -1,4 +1,4 @@
-package index;
+package controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,10 +10,9 @@ public class IndexController implements Controller{
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		ModelAndView mv = new ModelAndView("index"); //web.xml을 이용한 경로간소화
-		mv.addObject("data","Hello Spring MVC~");
+		ModelAndView mv = new ModelAndView("root.index"); //dispatcher-servlet.xml을 이용한 경로간소화
+//		mv.addObject("data","Hello Spring MVC~");
 //		mv.setViewName("WEB-INF/view/index.jsp");
 		return mv;
 	}
-
 }
